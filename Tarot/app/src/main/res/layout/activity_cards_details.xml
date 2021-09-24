@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CardsDetails">
+    tools:context=".ui.activities.CardsDetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -80,104 +80,25 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCardImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="128dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="266dp" />
-
-        <TextView
-            android:id="@+id/tvFirstName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:textAlignment="center"
-            android:textColor="#999999"
-            app:layout_constraintEnd_toEndOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivCard"
-            tools:text="Los Magos" />
-
-        <TextView
-            android:id="@+id/tvSecondName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
-            android:textAlignment="center"
-            android:textColor="#999999"
-            app:layout_constraintEnd_toStartOf="@+id/guideline3"
-            app:layout_constraintStart_toEndOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/ivCard2"
-            tools:text="Los enamorados" />
-
-        <TextView
-            android:id="@+id/tvThirdName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:textAlignment="center"
-            android:textColor="#999999"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/ivCard3"
-            tools:text="La sacerdotiza" />
-
-        <ImageView
-            android:id="@+id/ivCard"
-            android:layout_width="120dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBar"
-            tools:src="@drawable/la_sacerdotisa" />
-
-        <ImageView
-            android:id="@+id/ivCard2"
-            android:layout_width="120dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintEnd_toStartOf="@+id/ivCard3"
-            app:layout_constraintStart_toEndOf="@+id/ivCard"
-            app:layout_constraintTop_toBottomOf="@+id/appBar"
-            tools:src="@drawable/rueda_de_la_fortuna" />
-
-        <ImageView
-            android:id="@+id/ivCard3"
-            android:layout_width="120dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBar"
-            tools:src="@drawable/la_estrella" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.22" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:foregroundGravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/appBar"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_cards" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="250dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="16dp"
             android:background="@color/black"
@@ -185,182 +106,23 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@id/rvCardImage"
             app:strokeColor="#D8D8D8"
             app:strokeWidth="1dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCardDetail"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tvCardName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="La Sacerdotisa" />
-
-                <ImageView
-                    android:id="@+id/ivCardFirst"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/la_sacerdotisa"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvCardName" />
-
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:id="@+id/tvCardSummary"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Lorem ipsum es el texto que se usa habitualmente en diseño "
-                    android:textAlignment="center"
-                    android:textColor="#999999"
-                    android:textSize="12sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ivCardFirst" />
-
-                <TextView
-                    android:id="@+id/tvCardMeaning"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:layout_marginEnd="8dp"
-                    android:text="Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final"
-                    android:textColor="@color/black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvCardSummary" />
-
-                <TextView
-                    android:id="@+id/tvSecondCardName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/roboto"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvCardMeaning"
-                    tools:text="La Sacerdotisa" />
-
-                <ImageView
-                    android:id="@+id/ivCardSecond"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/la_sacerdotisa"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvSecondCardName" />
-
-                <TextView
-                    android:id="@+id/tvCardSummarySecond"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Lorem ipsum es el texto que se usa habitualmente en diseño "
-                    android:textAlignment="center"
-                    android:textColor="#999999"
-                    android:fontFamily="@font/roboto"
-                    android:textSize="12sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ivCardSecond" />
-
-                <TextView
-                    android:id="@+id/tvCardMeaningSecond"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/roboto"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvCardSummarySecond" />
-
-                <TextView
-                    android:id="@+id/tvThirdCardName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvCardMeaningSecond"
-                    tools:text="La Sacerdotisa" />
-
-                <ImageView
-                    android:id="@+id/ivCardThird"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/la_sacerdotisa"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvThirdCardName" />
-
-                <TextView
-                    android:id="@+id/tvCardSummaryThird"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Lorem ipsum es el texto que se usa habitualmente en diseño "
-                    android:textAlignment="center"
-                    android:textColor="#999999"
-                    android:fontFamily="@font/roboto"
-                    android:textSize="12sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ivCardThird" />
-
-                <TextView
-                    android:id="@+id/tvCardMeaningThird"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="24dp"
-                    android:text="Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final"
-                    android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:fontFamily="@font/roboto"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvCardSummaryThird" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardImages"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_cards_detail" />
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Tarot</string>
     <string name="arrastra_tu_carta">Arrastra tu %s carta</string>
+    <string name="drag_here">Arrastra \n aquí</string>
 </resources>
