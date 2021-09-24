@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#8E24AC"
-    tools:context="com.example.tarot.MainActivity">
+    tools:context="com.example.tarot.ui.activities.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -140,11 +140,12 @@
             app:strokeWidth="1dp">
 
             <TextView
+                android:id="@+id/tvTextCardFirst"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/roboto"
-                android:text="Arrastra \n aquí"
+                android:text="@string/drag_here"
                 android:textAlignment="center"
                 android:textColor="#A064B0" />
         </com.google.android.material.card.MaterialCardView>
@@ -163,7 +164,7 @@
             app:strokeWidth="1dp">
 
             <TextView
-                android:id="@+id/tvSecond"
+                android:id="@+id/tvTextCardSecond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -188,6 +189,7 @@
             app:strokeWidth="1dp">
 
             <TextView
+                android:id="@+id/tvTextCardThird"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
